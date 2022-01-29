@@ -2,7 +2,7 @@
     Апи для класса главной страницы
 """
 
-from db.services.main_page import get_main_page_information
+from src.db.services.main_page import get_main_page_information
 
 
 async def get_updates(last):

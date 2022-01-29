@@ -2,9 +2,9 @@ import asyncio
 from typing import Optional
 from fastapi import FastAPI, Query
 from starlette.responses import FileResponse
-from db.services import initialize_storage
-from api.update import get_updates
-from api.group import get_groups
+from src.db.services import initialize_storage
+from src.api.update import get_updates
+from src.api.group import get_groups
 
 app = FastAPI()
 
@@ -16,7 +16,7 @@ async def startup_event():
 
 @app.get("/")
 async def main_page():
-    return FileResponse('static/index.html')
+    return FileResponse('src/static/index.html')
 
 
 @app.get("/ping")

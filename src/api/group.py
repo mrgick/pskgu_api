@@ -2,10 +2,10 @@
     Апи для класса групп
 """
 from fastapi import HTTPException
-from db.services.main_page import get_main_page_hash
-from db.services.group import find_group_by_name
-from db.models import Key
-from db import local_storage
+from src.db.services.main_page import get_main_page_hash
+from src.db.services.group import find_group_by_name
+from src.db.models import Key
+from src.db import local_storage
 
 
 async def get_groups(list_of_names, name):

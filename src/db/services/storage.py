@@ -2,12 +2,11 @@
     Файл с функциями взаимодействий с local_storage.
 """
 
-from db.models import Group, Main_Page
-from db import local_storage
+from ..models import Group, Main_Page, Key
+from src.db import local_storage
 from .group import find_all_groups
 from .main_page import get_main_page_hash
-from ..models import Key
-from utils import logger
+from src.utils import logger
 
 
 async def initialize_storage():

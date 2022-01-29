@@ -2,7 +2,7 @@
     Работа с mongo db.
 """
 
-from config import Config
+from src.config import Config
 from motor.motor_asyncio import AsyncIOMotorClient
 from umongo.frameworks import MotorAsyncIOInstance
 from .local_storage import Storage

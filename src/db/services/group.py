@@ -2,8 +2,8 @@
     Файл с функциями взаимодействий с классом Group.
 """
 
-from db.models import Group, Key
-from db import local_storage
+from ..models import Group, Key
+from src.db import local_storage
 
 
 async def find_all_groups():

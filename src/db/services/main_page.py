@@ -2,7 +2,7 @@
     Файл с функциями взаимодействий с классом Main_Page.
 """
 
-from db.models import Main_Page
+from ..models import Main_Page
 
 
 async def get_main_page_hash():
