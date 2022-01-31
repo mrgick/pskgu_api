@@ -4,6 +4,7 @@
 from fastapi import HTTPException
 from src.db.services.main_page import get_main_page_hash
 from src.db.services.group import find_group_by_name
+from src.db.services import initialize_storage
 from src.db.models import Key
 from src.db import local_storage
 
