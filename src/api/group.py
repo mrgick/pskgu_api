@@ -31,8 +31,7 @@ async def get_all_list_of_groups(name):
 
 async def get_info_of_one_group(name):
     if name == "all":
-        result = await local_storage.get(Key("groups_all"))
-        return result
+        return await local_storage.get(Key("groups_all"))
     else:
         group = (await local_storage.get(Key("groups_all"))).get(name)
         if group:
