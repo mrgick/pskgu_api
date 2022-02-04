@@ -39,18 +39,21 @@ async def test_connection():
 async def get_update(last: Optional[bool] = Query(
     None,
     description="If enable - you will get the last update information." +
-    "<br>If not - you will get all update information.")):
+        "<br>If not - you will get all update information.")):
     return await get_updates(last)
 
 
 @app.get("/groups")
 async def groups(
-        list_of_names: Optional[bool] = Query(
+        list_of_names: Optional[str] = Query(
             None,
-            description="If enable - " +
-            "you will get the list of names of all groups."),
+            enum=["list", "structure"],
+            description="list - you will get list of groups" +
+            "<br> structure - you will get structure of groups"),
         name: Optional[str] = Query(
             None,
-            description="Name of group, that you want to get. Example - 0432-06"
+            description="Name of group, that you want to get." +
+            " Example - 0432-06" +
+            "<br> all - you will get all groups with details."
         )):
     return await get_groups(list_of_names, name)
