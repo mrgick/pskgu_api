@@ -1,4 +1,3 @@
-import asyncio
 from typing import Optional
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
@@ -6,6 +5,7 @@ from starlette.responses import FileResponse
 from src.db.services import initialize_storage
 from src.api.update import get_updates
 from src.api.group import get_groups
+from src.cron import run_cron
 
 app = FastAPI()
 
@@ -23,6 +23,7 @@ app.add_middleware(
 @app.on_event("startup")
 async def startup_event():
     await initialize_storage()
+    await run_cron()
 
 
 @app.get("/")

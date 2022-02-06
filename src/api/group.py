@@ -2,13 +2,11 @@
     Апи для класса групп
 """
 from fastapi import HTTPException
-from src.db.services import check_update
 from src.db.models import Key
 from src.db import local_storage
 
 
 async def get_groups(list_of_names, name):
-    await check_update()
     if list_of_names:
         return await get_all_list_of_groups(list_of_names)
     if name:
