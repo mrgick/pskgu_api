@@ -11,6 +11,7 @@ class Config:
     """
     # настройки cron
     CRON_PERIOD = 5*60
+    URL_PING = os.environ.get('URL_PING')
 
     # настроки mongo db
     DB_NAME = "DB"
