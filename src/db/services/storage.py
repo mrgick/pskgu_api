@@ -13,7 +13,6 @@ async def check_update():
     h = await get_main_page_hash()
     if await local_storage.get(Key("main_page_hash")) != h:
         await initialize_storage()
-        await local_storage.put(Key("main_page_hash"), h)
 
 
 async def initialize_storage():

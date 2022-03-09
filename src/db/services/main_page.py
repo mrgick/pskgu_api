@@ -10,7 +10,7 @@ async def get_main_page_hash():
         Получение хеша главной страницы.
     """
     main_page = await Main_Page.find_one(filter={'name': 'main_hash'})
-    return main_page.page_hash
+    return dict(main_page.information)
 
 
 async def get_main_page_info_struct():
