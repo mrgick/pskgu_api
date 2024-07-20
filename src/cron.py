@@ -1,6 +1,7 @@
 """
     Cron - постоянное повторение.
 """
+
 import httpx
 import asyncio
 import logging
@@ -16,12 +17,14 @@ async def check_status_site(url):
             r = await client.get(url)
     except Exception as e:
         logger.error(e)
-        logger.error('Site is not available!')
+        logger.error("Site is not available!")
 
 
 async def running():
     period = Config.CRON_PERIOD
     url = Config.URL_PING
+    if url is None:
+        return True
     while True:
         try:
             await check_update()

@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  api:
+    build: .
+    restart: unless-stopped
+    environment:
+      - MONGO_URL=${MONGO_URL}
+    ports:
+      - "80:80"
