@@ -4,12 +4,17 @@
 Основная цель – использование апи для [альтернативного сайта расписания](https://github.com/mrgick/rasp_pskgu) 
 # Запуск
 
-Запуск вручную
+>Запуск вручную
 ```bash
 python -m venv .venv
 . .venv/bin/activate
 pip install -r requirements.txt
 uvicorn src.main:app
+```
+
+> Через докер
+```bash
+export MONGO_URL="mongodb://localhost:27017" && docker compose up
 ```
 
 ## Настройки
